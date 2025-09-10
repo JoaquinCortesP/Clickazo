@@ -1,74 +1,124 @@
+/* ====== GENERAL ====== */
 body {
-margin: 0;
-font-family: Arial, sans-serif;
-background-color: #fff;
-color: #333;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #d1c4e9; /* morado pálido */
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
-header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 1rem 2rem;
-border-bottom: 1px solid #ddd;
-}
-.logo {
-font-size: 1.5rem;
-font-weight: bold;
-}
-nav a {
-margin: 0 0.8rem;
-text-decoration: none;
-color: #333;
-}
-.auth-buttons button {
-margin-left: 0.5rem;
-padding: 0.4rem 0.8rem;
-border: 1px solid #333;
-border-radius: 4px;
-background: none;
-cursor: pointer;
-}
-.auth-buttons .register {
-background-color: #333;
-color: #fff;
-}
-main {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-height: 70vh;
-text-align: center;
-}
-main h2{
-font-size: 1rem;
-margin-bottom: 0,05rem;
-margin-top: 0;
 
+/* ====== NAVBAR ====== */
+.navbar {
+  background-color: #000000 !important; /* azul elegante */
 }
+
+.navbar-brand {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #ffffff !important; /* amarillo suave */
+  letter-spacing: 1px;
+}
+
+.navbar .btn {
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+
+/* ====== SECCION BUSCADOR ====== */
+.search-section {
+  background-color: #ede7f6; /* morado pálido */
+  padding: 50px 0;
+}
+
 .search-box {
-margin-top: 1rem;
-display: flex;
-align-items: center;
-border: 1px solid #888;
-border-radius: 4px;
-padding: 0.4rem;
-width: 300px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
-.search-box input {
-border: none;
-outline: none;
-flex: 1;
-padding: 0.3rem;
+
+.search-box .form-control {
+  border-radius: 15px 0 0 15px;
+  border: 1px solid #d1c4e9; /* borde morado suave */
 }
-.search-box button {
-background: none;
-border: none;
-cursor: pointer;
+
+.search-box .btn {
+  border-radius: 0 15px 15px 0;
 }
-footer {   
-background-color: #222;
-color: #fff;
-text-align: center;
-padding: 1rem;
+
+
+/* ====== SECCIONES ====== */
+section {
+  padding: 60px 0;
+}
+
+section h2, section h3 {
+  font-weight: bold;
+  color: #3f51b5; /* azul para titulares */
+}
+
+/* ====== FORMULARIOS ====== */
+form {
+  background-color: #d1c4e9;
+  border-radius: 12px;
+  border: 2px solid #d1c4e9; /* borde suave */
+}
+
+form .form-control {
+  border-radius: 10px;
+  border: 1px solid #d1c4e9; /* borde morado claro */
+}
+
+/* ====== BOTONES ====== */
+.btn {
+  border-radius: 25px;
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color: #3f51b5;
+  border-color: #3f51b5;
+}
+
+.btn-primary:hover {
+  background-color: #303f9f;
+  border-color: #303f9f;
+}
+
+.btn-warning {
+  background-color: #f78e74;
+  border-color: #f78e74;
+  color: #333;
+}
+
+.btn-warning:hover {
+  background-color: #e2ebee;
+  border-color: #e2ebee;
+}
+
+/* ====== CARDS ====== */
+.card {
+  border-radius: 15px;
+  border: none;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-title {
+  color: #d1c4e9;
+  font-weight: bold;
+}
+
+/* ====== FOOTER ====== */
+footer {
+  margin-top: auto;
+  background-color: #000000;
+  color: #fff;
+  font-size: 0.9rem;
 }
