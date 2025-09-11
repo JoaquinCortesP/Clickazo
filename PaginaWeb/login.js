@@ -1,26 +1,34 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.querySelector("form");
+const loginForm = document.getElementById("loginForm");
 
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
+loginForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const usuario = JSON.parse(localStorage.getItem("usuario"));
 
-    const correo = document.getElementById("correo").value.trim();
-    const clave = document.getElementById("clave").value.trim();
+  const correo = document.getElementById("loginCorreo").value.trim();
+  const password = document.getElementById("loginPassword").value.trim();
 
-    if (correo === "" || clave === "") {
-      alert("⚠️ Por favor completa todos los campos.");
-      return;
-    }
+  let valido = true;
 
-    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
-    const usuario = usuarios.find(u => u.correo === correo && u.clave === clave);
+  if (correo === "") {
+    document.getElementById("errorLoginCorreo").textContent = "El correo es obligatorio.";
+    valido = false;
+  } else {
+    document.getElementById("errorLoginCorreo").textContent = "";
+  }
 
-    if (!usuario) {
-      alert("❌ Usuario no registrado o datos incorrectos.");
-    } else {
-      alert(✅ Bienvenido, ${usuario.nombre});
-      localStorage.setItem("usuarioActivo", JSON.stringify(usuario));
-      window.location.href = "index.html"; 
-    }
-  });
+  if (password === "") {
+    document.getElementById("errorLoginPassword").textContent = "La contraseña es obligatoria.";
+    valido = false;
+  } else {
+    document.getElementById("errorLoginPassword").textContent = "";
+  }
+
+  if (!valido) return;
+
+  if (usuario && usuario.correo === correo && usuario.password === password) {
+    alert("Bienvenido " + usuario.nombre + " 🎉");
+    window.location.href = "index.html";
+  } else {
+    alert("Correo o contraseña incorrectos ❌");
+  }
 });

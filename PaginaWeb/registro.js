@@ -1,39 +1,65 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.querySelector("form");
+const registroForm = document.getElementById("registroForm");
 
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const nombre = document.getElementById("nombre").value.trim();
-    const correo = document.getElementById("correo").value.trim();
-    const clave = document.getElementById("clave").value.trim();
-    const confirmar = document.getElementById("confirmar").value.trim();
-
-    if (nombre === "" || correo === "" || clave === "" || confirmar === "") {
-      alert("⚠️ Todos los campos son obligatorios.");
-    } else if (!correo.includes("@")) {
-      alert("⚠️ Ingresa un correo válido.");
-    } else if (clave.length < 6) {
-      alert("⚠️ La contraseña debe tener al menos 6 caracteres.");
-    } else if (clave !== confirmar) {
-      alert("⚠️ Las contraseñas no coinciden.");
-    } else {
-      // Guardar usuario en localStorage
-      let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
-      
-      // Verificar si ya existe
-      const existe = usuarios.find(u => u.correo === correo);
-      if (existe) {
-        alert("⚠️ Este correo ya está registrado.");
-        return;
-      }
-
-      usuarios.push({ nombre, correo, clave });
-      localStorage.setItem("usuarios", JSON.stringify(usuarios));
-
-      alert("✅ Registro exitoso. ¡Bienvenido a Clickazo!");
-      form.reset();
-      window.location.href = "login.html"; 
-    }
-  });
+registroForm.addEventListener("input", () => {
+  validarFormulario();
 });
+
+registroForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (validarFormulario()) {
+    localStorage.setItem("usuario", JSON.stringify({
+      nombre: document.getElementById("nombre").value,
+      correo: document.getElementById("correo").value,
+      password: document.getElementById("password").value
+    }));
+    alert("Registro exitoso 🎉");
+    window.location.href = "login.html";
+  }
+});
+
+function validarFormulario() {
+  let valido = true;
+
+  // Nombre
+  const nombre = document.getElementById("nombre").value.trim();
+  const errorNombre = document.getElementById("errorNombre");
+  if (nombre.length < 3) {
+    errorNombre.textContent = "El nombre debe tener al menos 3 caracteres.";
+    valido = false;
+  } else {
+    errorNombre.textContent = "";
+  }
+
+  // Correo
+  const correo = document.getElementById("correo").value.trim();
+  const errorCorreo = document.getElementById("errorCorreo");
+  const regexCorreo = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  if (!regexCorreo.test(correo)) {
+    errorCorreo.textContent = "Formato de correo inválido.";
+    valido = false;
+  } else {
+    errorCorreo.textContent = "";
+  }
+
+  // Contraseña
+  const password = document.getElementById("password").value.trim();
+  const errorPassword = document.getElementById("errorPassword");
+  if (password.length < 8) {
+    errorPassword.textContent = "La contraseña debe tener al menos 8 caracteres.";
+    valido = false;
+  } else {
+    errorPassword.textContent = "";
+  }
+
+  // Confirmar contraseña
+  const confirmPassword = document.getElementById("confirmPassword").value.trim();
+  const errorConfirmPassword = document.getElementById("errorConfirmPassword");
+  if (confirmPassword !== password || confirmPassword === "") {
+    errorConfirmPassword.textContent = "Las contraseñas no coinciden.";
+    valido = false;
+  } else {
+    errorConfirmPassword.textContent = "";
+  }
+
+  return valido;
+}
