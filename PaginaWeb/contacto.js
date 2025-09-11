@@ -16,8 +16,9 @@
       resultado.textContent = "⚠️ Ingresa un correo válido.";
       resultado.style.color = "red";
     } else {
-      resultado.textContent = ✅ ¡Gracias por tu mensaje, ${nombre}!;
+      resultado.textContent = `✅ ¡Gracias por tu mensaje, ${nombre}!`;
       resultado.style.color = "green";
+
       form.reset();
     }
   });
