@@ -1,0 +1,139 @@
+/* ===== ESTILOS GLOBALES ===== */
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background-color: #000000 !important;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: #ffffff !important;
+}
+
+.navbar .nav-link {
+  color: #ffffff !important;
+  margin-right: 1rem;
+  font-weight: 500;
+}
+.navbar .nav-link:hover {
+  text-decoration: underline;
+}
+
+/* ===== BUSCADOR ===== */
+.search-section {
+  padding: 3rem 0;
+  text-align: center;
+}
+.search-section input {
+  width: 50%;
+  max-width: 600px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.search-section input:focus {
+  border-color: #999;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== BOTONES DE CATEGORÍAS ===== */
+.category-buttons {
+  text-align: center;
+  margin: 2rem 0;
+}
+.category-buttons .btn {
+  margin: 0.3rem;
+  border-radius: 20px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+}
+.category-buttons .btn-outline-dark {
+  color: #000;
+}
+.category-buttons .btn-outline-dark:hover {
+  background-color: #f0f0f0;
+}
+
+/* ===== TARJETAS DE PRODUCTO ===== */
+.card {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.card-body {
+  text-align: center;
+}
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.card-text {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 3rem;
+}
+
+/* ===== FORMULARIOS (login, registro, contacto) ===== */
+.form-container {
+  max-width: 400px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+.form-container .form-control {
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  padding: 0.75rem;
+}
+.form-container .btn-primary {
+  width: 100%;
+  border-radius: 20px;
+  padding: 0.75rem;
+  font-weight: 600;
+}
+.form-control:invalid {
+  border-color: #dc3545;
+}
+
+.form-control:valid {
+  border-color: #198754;
+}
+
+.error-msg {
+  color: #dc3545;
+  font-size: 0.9em;
+}
+
+.success-msg {
+  color: #198754;
+  font-size: 0.9em;
+}
