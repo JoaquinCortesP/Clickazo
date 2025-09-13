@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Iniciar sesión - Clickazo</title>
-  <link rel="stylesheet" href="C:\Users\zapata\Desktop\PaginaWeb\Clickazo\PaginaWeb\style.css">
+  <link rel="stylesheet" href=css\style.css">
 </head>
 <body>
 
@@ -22,18 +22,21 @@
   <!-- Login -->
   <main class="container my-5">
     <h2 class="text-center mb-4">Iniciar sesión</h2>
-    <form class="w-50 mx-auto shadow p-4 rounded bg-light">
-      <div class="mb-3">
-        <label for="correo" class="form-label">Correo electrónico</label>
-        <input type="email" class="form-control" id="correo" placeholder="ejemplo@email.com">
-      </div>
-      <div class="mb-3">
-        <label for="clave" class="form-label">Contraseña</label>
-        <input type="password" class="form-control" id="clave" placeholder="********">
-      </div>
-      <button type="submit" class="btn btn-primary w-100">Ingresar</button>
-      <p class="mt-3 text-center">¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a></p>
-    </form>
+     <form id="loginForm" class="w-50 mx-auto shadow p-4 rounded bg-light">
+     <div class="mb-3">
+    <label for="loginCorreo" class="form-label">Correo electrónico</label>
+    <input type="email" class="form-control" id="loginCorreo" placeholder="ejemplo@email.com">
+    <div id="errorLoginCorreo" class="text-danger small"></div>
+    </div>
+  <div class="mb-3">
+    <label for="loginPassword" class="form-label">Contraseña</label>
+    <input type="password" class="form-control" id="loginPassword" placeholder="********">
+    <div id="errorLoginPassword" class="text-danger small"></div>
+  </div>
+  <button type="submit" class="btn btn-primary w-100">Ingresar</button>
+  <p class="mt-3 text-center">¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a></p>
+</form>
+
   </main>
 
   <!-- Footer -->
@@ -42,7 +45,7 @@
   </footer>
 
 
-  <script src="C:\Users\Cetecom\Desktop\Clickazo-main\Clickazo\PaginaWeb\js\login.js" defer=""></script>
+  <script src="js\login.js" defer=""></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
 </body>
