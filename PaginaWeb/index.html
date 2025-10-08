@@ -1,128 +1,177 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Clickazo - Inicio</title>
-  <link rel="stylesheet" href="css\style.css">
+
+  <!-- Bootstrap + Google Font -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos globales (unificado) -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- ===========================
+       NAVBAR (encabezado)
+       Comentario: Navbar consistente en todas las páginas — 
+       mantiene la navegación y el botón de cerrar sesión.
+       =========================== -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-dark" href="index.html">Clickazo</a>
 
-  <!-- Header -->
-  <header class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
-    <div class="container">
-      <a class="navbar-brand fs-3 fw-bold" href="index.html">&#128640;Clickazo</a>
-      <div>
-        <a href="contacto.html" class="btn btn-secondary me-2">Contacto</a>
-        <a href="login.html" class="btn btn-success me-2">Sign in</a>
-        <a href="registro.html" class="btn btn-success me-2">Register</a>
-        <button id="cerrarSesion" class="btn btn-dark">Cerrar sesión</button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item"><a class="nav-link text-muted" href="contacto.html">Contacto</a></li>
+            <li class="nav-item"><a class="nav-link text-muted" href="registro.html">Registrarse</a></li>
+            <li class="nav-item"><a class="nav-link text-muted" href="login.html">Iniciar sesión</a></li>
+            <li class="nav-item ms-2">
+              <!-- botón de cerrar sesión (funciona desde main.js) -->
+              <button id="cerrarSesion" class="btn btn-outline-primary btn-sm">Cerrar sesión</button>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
+    </nav>
   </header>
 
-  <!-- Buscador -->
-  <section class="py-5 bg-light text-center">
-    <div class="container">
-      <h2 class="mb-4">Busca tu producto favorito</h2>
-      <form class="d-flex justify-content-center">
-        <input type="text" class="form-control w-50 me-2" placeholder="Buscar...">
-        <button type="submit" class="btn btn-primary">🔍</button>
+  <!-- ===========================
+       HERO / BUSCADOR
+       Comentario: área principal con buscador (estático) para mockup.
+       =========================== -->
+  <section class="hero py-5 bg-soft-gray">
+    <div class="container text-center">
+      <h1 class="display-6 fw-bold mb-2">Encuentra lo que necesitas en Clickazo</h1>
+      <p class="text-muted mb-4">Compara, descubre y compra con confianza</p>
+      <form class="d-flex justify-content-center" id="searchForm">
+        <input id="searchInput" type="search" class="form-control form-control-lg me-2 search-input" placeholder="Busca tu producto favorito..." aria-label="Buscar producto">
+        <button class="btn btn-accent btn-lg">Buscar</button>
       </form>
     </div>
   </section>
 
-  <!-- Productos recomendados -->
-  <section class="py-5">
-    <div class="row g-4">
-
-  <!-- Producto 1 -->
-  <div class="col-md-4">
-    <div class="card h-100">
-      <img src="https://media.falabella.com/falabellaCL/140965015_01/w=1500,h=1500,fit=pad" class="card-img-top" alt="Zapatillas">
-      <div class="card-body">
-        <h5 class="card-title">Zapatilla Converse Chuck Taylor All Star Malden Unisex Negra</h5>
-        <p class="card-text">$56.990</p>
-        <a href="https://www.falabella.com/falabella-cl/product/140965009/Zapatilla-Converse-Chuck-Taylor-All-Star-Malden-Unisex-Negra/140965015" target="_blank" class="btn btn-dark">Ver más </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Producto 2 -->
-  <div class="col-md-4">
-    <div class="card h-100">
-      <img src="https://www.jbl.cl/dw/image/v2/BFND_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw29abe6e2/1.JBL_Endurance%20Run%202%20Wireless_Product%20Image_Hero_White.png?sw=535&sh=535" class="card-img-top" alt="Audífonos JBL">
-      <div class="card-body">
-        <h5 class="card-title">JBL Endurance Run 2 Wireless</h5>
-        <p class="card-text">$29.990</p>
-        <a href="https://www.jbl.cl/ENDURANCE-RUN-2-WIRELESS.html" target="_blank" class="btn btn-dark">Ver más </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Producto 3 -->
-  <div class="col-md-4">
-    <div class="card h-100">
-      <img src="https://http2.mlstatic.com/D_NQ_NP_2X_888776-MLA80172442124_112024-F.webp" class="card-img-top" alt="Guitarra Eléctrica">
-      <div class="card-body">
-        <h5 class="card-title">Guitarra Eléctrica Stratocaster Ibrah Music + Amplif + Accesorios Negra</h5>
-        <p class="card-text">$169.990</p>
-        <a href="https://www.mercadolibre.cl/guitarra-electrica-stratocaster-ibrah-music-amplif-accesorios-negra/p/MLC42642249" target="_blank" class="btn btn-dark">Ver más </a>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-  </section>
-
-  <!-- Tus productos -->
-  <section class="py-5">
+  <!-- ===========================
+       PRODUCTOS RECOMENDADOS
+       Comentario: tarjetas con imagen, título, precio y botón "Ver más".
+       Links abren en nueva pestaña para que el usuario no pierda la página.
+       =========================== -->
+  <main class="py-5">
     <div class="container">
-      <h3 class="mb-4">Tus productos</h3>
+      <h2 class="section-title">Productos recomendados</h2>
+
+      <div class="row g-4">
+
+        <!-- tarjeta producto A -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <article class="card product-card h-100">
+            <img src="https://falabella.scene7.com/is/image/Falabella/882999754_1?wid=800&hei=800&qlt=80" class="card-img-top" alt="Zapatillas Adidas Runfalcon">
+            <div class="card-body">
+              <h5 class="card-title">Zapatillas Adidas Runfalcon</h5>
+              <p class="card-text text-muted mb-2">$89.990</p>
+              <a class="btn btn-outline-dark btn-sm" href="https://www.falabella.com/falabella-cl/product/882999754/Zapatillas-Running-Runfalcon-3/882999754" target="_blank" rel="noopener">Ver más</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- tarjeta producto B -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <article class="card product-card h-100">
+            <img src="https://ripley.scene7.com/is/image/Ripley/2000387374428_2?wid=800&hei=800" class="card-img-top" alt="Polera Nike">
+            <div class="card-body">
+              <h5 class="card-title">Polera Oversize Nike</h5>
+              <p class="card-text text-muted mb-2">$29.990</p>
+              <a class="btn btn-outline-dark btn-sm" href="https://simple.ripley.cl/polera-nike-sportswear-club-hombre-2000387374428p" target="_blank" rel="noopener">Ver más</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- tarjeta producto C -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <article class="card product-card h-100">
+            <img src="https://paris.scene7.com/is/image/ParisCL/1842308_1?wid=800&hei=800" class="card-img-top" alt="Audífonos Sony">
+            <div class="card-body">
+              <h5 class="card-title">Audífonos Sony WH-1000XM4</h5>
+              <p class="card-text text-muted mb-2">$249.990</p>
+              <a class="btn btn-outline-dark btn-sm" href="https://www.paris.cl/audifonos-inalambricos-sony-wh-1000xm4-negro-1842308.html" target="_blank" rel="noopener">Ver más</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- tarjeta producto D -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <article class="card product-card h-100">
+            <img src="https://www.lider.cl/catalogo/images/whiteBackground/LEGO_76917_1.jpg" class="card-img-top" alt="LEGO Ferrari">
+            <div class="card-body">
+              <h5 class="card-title">LEGO Speed Champions Ferrari</h5>
+              <p class="card-text text-muted mb-2">$14.990</p>
+              <a class="btn btn-outline-dark btn-sm" href="#" target="_blank" rel="noopener">Ver más</a>
+            </div>
+          </article>
+        </div>
+
+      </div> <!-- row -->
+    </div> <!-- container -->
+  </main>
+
+  <!-- ===========================
+       TUS PRODUCTOS + HISTORIAL
+       Comentario: estas secciones muestran ejemplos estáticos, 
+       en main.js podríamos cargarlos desde localStorage para dinamizar.
+       =========================== -->
+  <section class="py-5 bg-soft-gray">
+    <div class="container">
       <div class="row g-4">
         <div class="col-md-6">
-          <div class="card shadow">
-            <img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/c2c3337a089844a6b9faff5a91d74d4a_9366/Polera_Adilenium_Season_3_Fan_Blanco_JY6299_01_laydown.jpg" class="card-img-top" alt="Polera Adidas">
-            <div class="card-body">
-              <h5 class="card-title">Polera Adidas</h5>
-              <p class="card-text">Producto agregado recientemente por ti.</p>
-              <a href="https://www.adidas.cl/polera-adilenium-season-3-fan/JY6299.html" target="_blank" class="btn btn-dark">Ver más </a>
+          <h3 class="section-title">Tus productos</h3>
+          <div class="card small-card mb-3">
+            <div class="row g-0 align-items-center">
+              <div class="col-4">
+                <img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto/c2c3337a089844a6b9faff5a91d74d4a_9366/Polera.jpg" class="img-fluid rounded-start" alt="Polera Adidas">
+              </div>
+              <div class="col-8">
+                <div class="card-body">
+                  <h5 class="card-title mb-1">Polera Adidas</h5>
+                  <p class="card-text text-muted small mb-0">Agregada por ti recientemente</p>
+                </div>
+              </div>
             </div>
           </div>
+
         </div>
+
         <div class="col-md-6">
-          <div class="card shadow">
-            <img src="https://images.samsung.com/is/image/samsung/p6pim/co/2501/gallery/co-galaxy-s25-s938-sm-s938bzbkltc-thumb-544700860?$216_216_PNG$" class="card-img-top" alt="Mochila Puma">
-            <div class="card-body">
-              <h5 class="card-title">Smartphone Samsung</h5>
-              <p class="card-text">Agregado a favoritos</p>
-              <a href="https://www.samsung.com/co/smartphones/galaxy-s25-ultra/" target="_blank" class="btn btn-dark">Ver más </a>
-            </div>
-          </div>
+          <h3 class="section-title">Historial reciente</h3>
+          <ul class="list-group shadow-sm">
+            <li class="list-group-item">Compraste: Zapatillas Nike — <small class="text-muted">20/08/2025</small></li>
+            <li class="list-group-item">Favorito: Smartphone Samsung — <small class="text-muted">15/08/2025</small></li>
+            <li class="list-group-item">Visto: Audífonos Sony — <small class="text-muted">05/08/2025</small></li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Historial -->
-  <section class="py-5">
-    <div class="container">
-      <h3 class="mb-4">Historial</h3>
-      <ul class="list-group">
-        <li class="list-group-item">Compraste: Zapatillas Nike - 20/08/2025</li>
-        <li class="list-group-item">Agregaste a favoritos: Smartphone Samsung - 15/08/2025</li>
-        <li class="list-group-item">Compraste: Audífonos Bluetooth - 05/08/2025</li>
-      </ul>
+  <!-- ===========================
+       FOOTER
+       Comentario: pie de página simple y consistente
+       =========================== -->
+  <footer class="py-4 bg-white border-top">
+    <div class="container text-center text-muted">
+      © 2025 Clickazo — Todos los derechos reservados.
     </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-dark text-light text-center py-3">
-    <p class="mb-0">© 2025 Clickazo. Todos los derechos reservados.</p>
   </footer>
 
-  <script src="js/index.js" defer></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- main.js unificado (validaciones, login, registro, contacto, sesión) -->
+  <script src="C:\Users\Cetecom\Desktop\Clickazo-main\Clickazo\PaginaWeb\main.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
 </body>
 </html>
+
+
